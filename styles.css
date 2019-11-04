@@ -1,0 +1,180 @@
+header
+{
+    height: 75px;
+    margin-top: 80px;
+    background-image: url(media/logobanner.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#nav
+{
+    text-align: center;
+}
+
+#nav ul {
+  list-style-type: none;
+  padding:0;
+  margin-top: 10px;
+  overflow: hidden;
+  background-color: #3d3c3c;
+  display: inline-block;
+
+}
+
+#nav li {
+  float: left;
+  align-self: auto; 
+}
+
+#nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 80px;
+  text-decoration: none;
+    
+}
+
+/* Change the link color to #111 (black) on hover */
+#nav li a:hover {
+  background-color: #111;
+}
+
+
+
+main
+{
+    /* padding: 10px 90px 60px 90px; */
+    background-color: #fff;
+    color: #2b1d0e;
+    width: 1000px;
+    margin: auto;
+}
+
+h2
+{
+    font-size: 25px;
+    color: #2b1d0e;
+    text-align: center;
+    font-style: italic;
+}
+
+
+body
+{
+    margin: auto; 
+    background-color: #FFFFFF;
+    font-size: 13px;
+    width: 1200px;
+    color: #3B230B;
+    font-family: Verdana, Arial, sans-serif;
+
+}
+
+footer
+{
+    background-color: #FFFFFF;
+    font-size: 11px;
+    font-style: italic;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#shoppingbag
+{
+    
+    width: 3%;
+    float: right;
+    padding: 45px 65px 0px 0px;
+}
+
+#cakeofthemonth
+{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content
+{
+    text-align: center;
+    font-size: 14px;
+    font-family: verdana, arial, sans-serif;
+    padding-left: 40px;
+    padding-right: 40px;
+    line-height: 1.4;
+    
+}
+
+table.menutable1
+{
+    background-color: white;
+    table-layout: fixed;
+    border: 0; 
+    margin: auto;
+    width: 100%;
+}
+
+
+table.menutable1 td
+{
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+}
+
+table.menutable1 td[id="desc"]
+{
+    text-align: center;
+    padding: 0px 10px 10px 10px;
+}
+
+table.menutable1 th
+{
+    text-align: center;
+    padding: 0px 10px 0px 10px;
+    font-size: 16px;
+}
+
+#cake
+{
+    display: block;
+    max-width: 180px;
+    height: auto;
+    margin: auto;
+}
+
+table.locationtable
+{
+    background-color: white;
+    table-layout: fixed;
+    border: 0; 
+    margin: auto;
+    width: 100%;
+    padding-top: 16px;
+}
+
+#map
+{
+    display: block;
+    max-height:250px;
+    height: auto;
+    float: right;
+}
+
+#shopfront
+{
+    display: block;
+    max-height: 250px;
+    height: auto;
+}
+
+form
+{
+    font-family: Verdana, Arial, sans-serif;
+    width: 450px; 
+    height: 200px;
+}
