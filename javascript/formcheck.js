@@ -31,6 +31,7 @@ function validateEmail(){
     alert("Please fill in your email.");
     return false;
 }
+
 function validatePhone() {
   var phonenum = document.getElementById("phonenum").value;
   phonenum.trim();
