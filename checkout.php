@@ -10,7 +10,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-//catalog.php
+
 session_start();
 if (!isset($_SESSION['cart'])){
 	$_SESSION['cart'] = array();
@@ -46,6 +46,7 @@ if (isset($_GET['buy'])) {
 </div>
 <main>
 	<h2>Checkout</h2>
+    
     <?php
     $items = array(
        'Cream Layer Cake with Fruit',
@@ -59,8 +60,8 @@ if (isset($_GET['buy'])) {
     $prices = array(50.00, 45.00, 30.00, 40.00,50.00, 40.00, 50.00, 55.00);
     ?>
     
-    <table class="menutable1">
-    <form action="orderconfirm.php" method="get">
+<table class="menutable1">
+<form action="orderconfirm.php" method="get">
     <tr>
         <tr>
 		<th colspan="2">Item Description</th>
@@ -76,9 +77,8 @@ if (isset($_GET['buy'])) {
 	     echo number_format($prices[$_SESSION['cart'][$i]], 2). "</td>";
          echo "</tr>";
 	     $total = $total + $prices[$_SESSION['cart'][$i]];
-		 
-}
-?>
+		 }
+    ?>
     </tr>
     <tr>
         <br><th colspan="4" align='right'name="total"><br>Total: $<?php echo number_format($total, 2); ?>
@@ -88,8 +88,8 @@ if (isset($_GET['buy'])) {
 </table>
 <br><br><hr><br>
 <h2>Delivery Details</h2>
-    <table class="menutable1">
-    <form name="contactform" action="orderconfirm.php" method ="get">
+<table class="menutable1">
+<form name="contactform" action="orderconfirm.php" method ="get">
     <tr>
         <th><strong><label>*Name: </label></strong></th>
         <td><input type="text" name="name" id="name" onchange="validateName()" size="30" required></td>
@@ -110,8 +110,8 @@ if (isset($_GET['buy'])) {
         <td></td>
         <td><input type="submit" value="Place Order"></td>
     </tr>
-    </form>
-    </table>
+</form>
+</table>
 </main>
 </div>
 </body>

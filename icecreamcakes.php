@@ -35,6 +35,7 @@ if (isset($_GET['buy'])) {
 </ul>
 </div>
 <main>
+    
     <?php
     $items = array(
        'Cream Layer Cake with Fruit',
@@ -47,8 +48,8 @@ if (isset($_GET['buy'])) {
 	   'Rose Whisper');
     $prices = array(50.00, 45.00, 30.00, 40.00, 50.00, 40.00, 50.00, 55.00);
     ?>
-    <table class="menutable1">
-    <form action="submitorder.php" method="get">
+    
+<table class="menutable1">
     <tr>
         <td><img id="cake" src="media/parisatnight.png"></td>
         <td><img id="cake" src="media/flywithme.png"></td>
@@ -79,9 +80,7 @@ if (isset($_GET['buy'])) {
 	   echo "<td><a href='" .$_SERVER['PHP_SELF']. '?buy=' .$i. "'>Add to Cart</a></td>";
     }
     ?>
-    </tr>
-        
-</form>
+    </tr>     
 </table>
 </main>
 </div>

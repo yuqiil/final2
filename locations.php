@@ -20,7 +20,7 @@
 </ul>
 </div>
 <main>
-    <table class="locationtable">
+<table class="locationtable">
     <tr>
        <td style="font-size: 20px;"><b>Jurong Point</b>
        <td></td>

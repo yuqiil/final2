@@ -1,6 +1,6 @@
 <?php
 if(!isset($_REQUEST['id'])){ 
-    header("Location: index.php"); 
+    header("Location: index.html"); 
 } 
 
 $servername = "localhost";
@@ -28,9 +28,8 @@ if ($result = mysqli_query($conn,$sql)) {
     $orderInfo =mysqli_fetch_assoc($result);
 }
 
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +45,7 @@ if ($result = mysqli_query($conn,$sql)) {
 </header>
 <div id="nav">   
 <ul>
-    <li><a href="index.php">Home</a></li> 
+    <li><a href="index.html">Home</a></li> 
     <li><a href="signaturecakes.php">Signature Cakes</a></li> 
     <li><a href="icecreamcakes.php">Ice Cream Cakes</a></li>
     <li><a href="locations.php">Locations</a></li>
@@ -56,38 +55,36 @@ if ($result = mysqli_query($conn,$sql)) {
 <h2><strong>Your order has been placed successfully.</strong></h2>
 <main>
 <h2>Order Info</h2>
-                <p><b>Reference ID:</b> #<?php echo $orderInfo['id']; ?></p>
-                <p><b>Total:</b> <?php echo '$'.$orderInfo['total']; ?></p>
-                <p><b>Customer Name:</b> <?php echo $orderInfo['customer_name']?></p>
-                <p><b>Email:</b> <?php echo $orderInfo['email']; ?></p>
-                <p><b>Phone:</b> <?php echo $orderInfo['phonenum']; ?></p>
-				<p><b>Address:</b> <?php echo $orderInfo['address']; ?></p>
-                <p><b>Ordered Items:<br></b>    
-                <?php 
-                    //Get order items from the database 
-                    $itemsql =(
-                        "SELECT i.*, o.id
-                        FROM orders_item AS i 
-                        LEFT JOIN orders_table AS o 
-                        ON o.id = i.order_id 
-                        WHERE i.order_id = ".$orderInfo['id']);
+    <p><b>Reference ID:</b> #<?php echo $orderInfo['id']; ?></p>
+    <p><b>Total:</b> <?php echo '$'.$orderInfo['total']; ?></p>
+    <p><b>Customer Name:</b> <?php echo $orderInfo['customer_name']?></p>
+    <p><b>Email:</b> <?php echo $orderInfo['email']; ?></p>
+    <p><b>Phone:</b> <?php echo $orderInfo['phonenum']; ?></p>
+    <p><b>Address:</b> <?php echo $orderInfo['address']; ?></p>
+    <p><b>Ordered Items:<br></b>    
     
-                    if ($itemresult = mysqli_query($conn,$itemsql)) {
-                        $resultCheck2=mysqli_num_rows($itemresult);
-                        while($orderItem =mysqli_fetch_assoc($itemresult)){
-                            echo $orderItem['product_name'];
-                            echo ' ..... ';
-                            echo '$'.$orderItem['product_price'];
-                            echo '<br>';
-                            }
-                        }
-                ?>
-                </p>
-                <p><b>Item will be delivered in 3 days time.</b></p>
-
-
-
-
+        <?php 
+        //Get order items from the database 
+        $itemsql =(
+                    "SELECT i.*, o.id
+                     FROM orders_item AS i 
+                     LEFT JOIN orders_table AS o 
+                     ON o.id = i.order_id 
+                     WHERE i.order_id = ".$orderInfo['id']);
+    
+        if ($itemresult = mysqli_query($conn,$itemsql)) {
+                $resultCheck2=mysqli_num_rows($itemresult);
+                while($orderItem =mysqli_fetch_assoc($itemresult)){
+                echo $orderItem['product_name'];
+                echo ' ..... ';
+                echo '$'.$orderItem['product_price'];
+                echo '<br>';
+                }
+            }
+        ?>
+    
+    </p>
+    <p><b>Item will be delivered in 3 days time.</b></p>
 </main>
 </div>
 </body>

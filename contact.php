@@ -25,8 +25,8 @@
 <div style="text-align:center;">
     Have a question regarding our products or your order? Drop us an enquiry below!
 </div>
-    <table class="contacttable" style="margin:auto; padding-top: 14px;">
-    <form name="contactform" action="feedback.php" method ="get">
+<table class="contacttable" style="margin:auto; padding-top: 14px;">
+<form name="contactform" action="feedback.php" method ="get">
     <tr>
         <th style="float: left;"><strong><label>*Name: </label></strong></th>
         <td><input type="text" name="name" id="name" onchange="validateName()" size="30" required></td>
@@ -47,8 +47,8 @@
         <td></td>
         <td><input type="submit" value="Submit"></td>
     </tr>
-    </form>
-    </table>
+</form>
+</table>
 </main>
 </div>
 </body>

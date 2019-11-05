@@ -33,6 +33,7 @@ if (isset($_GET['empty'])) {
 </div>
 <main>
     <h2>Your shopping cart contains </h2>
+    
     <?php
     $items = array(
        'Cream Layer Cake with Fruit',
@@ -62,9 +63,7 @@ if (isset($_GET['empty'])) {
          echo "</tr>";
 	     $total = $total + $prices[$_SESSION['cart'][$i]];
         }
-
-
-        ?>
+    ?>
     </tr>
     <tr>
         <br><th colspan="4" align='right'><br>Total: $<?php echo number_format($total, 2); ?>

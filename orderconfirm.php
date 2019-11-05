@@ -10,7 +10,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-//cart.php
+
 session_start();
 if (!isset($_SESSION['cart'])){
 	$_SESSION['cart'] = array();
@@ -32,7 +32,7 @@ if (isset($_GET['empty'])) {
 	   'Rose Whisper');
     $prices = array(50.00, 45.00, 30.00, 40.00,50.00, 40.00, 50.00, 55.00);
    
-   // Insert customer data in the database 
+    // Insert customer data in the database 
 	$name = $_GET['name'];
 	$email = $_GET['email'];
 	$phonenum = $_GET['phonenum'];
@@ -42,6 +42,7 @@ if (isset($_GET['empty'])) {
 	if(mysqli_query($conn,$insertCust)){
 		$customerid= mysqli_insert_id($conn);
 	}
+
 	$total = 0;
 	for ($i=0; $i < count($_SESSION['cart']); $i++){
   
@@ -66,14 +67,9 @@ if (isset($_GET['empty'])) {
 
 	}
         
-	
 	 $redirectLoc = 'ordersuccess.php?id='.$orderid;
      unset($_SESSION['cart']);
 	 header("Location: $redirectLoc");
 	 exit();
- 
- 
 
- 
-	
-	
+?>
