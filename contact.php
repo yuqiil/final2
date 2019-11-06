@@ -13,7 +13,7 @@
 </header>
 <div id="nav">   
 <ul>
-    <li><a href="index.php">Home</a></li> 
+    <li><a href="index.html">Home</a></li> 
     <li><a href="signaturecakes.php">Signature Cakes</a></li> 
     <li><a href="icecreamcakes.php">Ice Cream Cakes</a></li>
     <li><a href="locations.php">Locations</a></li>
